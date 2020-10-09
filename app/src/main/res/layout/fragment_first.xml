@@ -3,11 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#4f4"
     android:id="@+id/flElement"
     tools:context=".FirstFragment">
 
 
     <TextView
+        android:id="@+id/tvElement"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"

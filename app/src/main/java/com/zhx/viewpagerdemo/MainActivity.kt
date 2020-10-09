@@ -8,7 +8,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    val pageSize = 3
+    val pageSize = 4
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -21,15 +21,13 @@ class MainActivity : AppCompatActivity() {
         val firstFragment = FirstFragment()
         val secondFragment = SecondFragment()
         for (i in 0 until pageSize) {
-            val fm = FirstFragment()
+            val fm = FirstFragment.newInstance("hello,this $i fragment", "")
             fm.callback = {
-                pager.setCurrentItem(i+1,true)
+                pager.setCurrentItem(i + 1, true)
             }
             fragments.add(fm)
 
         }
-//        fragments.add(firstFragment)
-        fragments.add(secondFragment)
         val adapter = PagerAdapter(this)
         adapter.setData(ArrayList(fragments))
         pager.adapter = adapter
